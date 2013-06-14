@@ -1,30 +1,36 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0.rc1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-end
+gem 'sqlite3'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+gem 'sass-rails',   '~> 4.0.0.rc1'
+gem 'coffee-rails', '~> 4.0.0'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', :platforms => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'uglifier', '>= 1.3.0'
+
 
 gem 'jquery-rails'
+
+group :test do
+  gem 'rake' # for travis, see http://about.travis-ci.org/docs/user/languages/ruby/
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+
+  gem 'minitest-spec-rails' # adds the describe / it test dsl as used in second & third example
+  gem 'capybara_minitest_spec' # adds the capybara expectations as used in the third example
+  gem 'selenium-webdriver'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -39,4 +45,8 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
+
+# gems to work with facebook api
+gem 'omniauth-facebook'
+gem 'fb_graph'

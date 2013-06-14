@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Test040::Application.load_tasks
+FbMukke::Application.load_tasks
